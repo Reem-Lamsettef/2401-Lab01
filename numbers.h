@@ -1,7 +1,7 @@
 /**
  *   @file: numbers.h
- * @author: <Enter your name here>
- *   @date: June 13, 2021
+ * @author: Reem Lamsettef
+ *   @date: July 10, 2023
  *  @brief: A little class that holds a dynamic array of numbers
  */
 
@@ -23,7 +23,7 @@ class Numbers {
     // This is used in Part 2 and would normally not be in a container	unsigned
     // long * reveal_address()const;
     // This is a function that you add in Part 2
-    // ~Numbers();
+    ~Numbers();
    private:
     unsigned long* data;
     size_t used;
@@ -68,7 +68,6 @@ unsigned long* Numbers::reveal_address() const { return data; }
 void Numbers::operator = (const Numbers& other){
     if (&other != this)     //if the length is not the same as capacity, need new array
     {
-        
         delete [] data;             //delete existing array
         used = other.used;          //set used to right side used for same capacity
 
@@ -81,10 +80,10 @@ void Numbers::operator = (const Numbers& other){
     }
 }
 
-// Numbers::~Numbers() {
-//     delete [] data;     //delete array
-//     byte_count = byte_count - capacity*sizeof(unsigned long);   //remove the bytes stored on the previous array
-//     cout << "Removed array..." << endl; //message showing a stored array got deleted
+Numbers::~Numbers() {
+    delete [] data;     //delete array
+    byte_count = byte_count - capacity*sizeof(unsigned long);   //remove the bytes stored on the previous array
+    cout << "Removed array..." << endl; //message showing a stored array got deleted
     
 
-// }
+}
