@@ -39,8 +39,8 @@ int main() {
 	}
     n1.display(cout);
     cout << endl;
-    n2.display(cout);
-    cout << endl;
+//    n2.display(cout);
+//    cout << endl;
 
 	// Uncomment the following to do Part 2
 
